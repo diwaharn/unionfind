@@ -1,7 +1,7 @@
 /*
  ============================================================================
  Name        : unionfind.c
- Author      : 
+ Author      :
  Version     :
  Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
@@ -21,6 +21,7 @@ int union_init()
 	for (idx = 0; idx < MAX_ARRAY_SIZE; idx++){
 		union_array[idx] = idx;
 	}
+	return 1;
 }
 
 int union_connect(int p, int q)
@@ -50,8 +51,8 @@ int union_algo2_root(int p)
 
 int union_algo2_connect(int p, int q)
 {
-	int i = root(p);
-	int j = root(q);
+	int i = union_algo2_root(p);
+	int j = union_algo2_root(q);
 
 	union_array[i] = j;
 	return 1;
